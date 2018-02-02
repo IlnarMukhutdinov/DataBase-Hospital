@@ -1,0 +1,22 @@
+﻿<Window x:Class="DataBase_Hospital.AddNewCabinet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBase_Hospital"
+        mc:Ignorable="d"
+        Title="AddNewCabinet" Height="300" Width="300">
+    <Window.Resources>
+        <ResourceDictionary Source="Style.xaml"/>
+    </Window.Resources>
+    <StackPanel>
+        <Label>Режим</Label>
+        <TextBox x:Name="TextBoxShedule"/>
+        <Label>Ответственный за кабинет</Label>
+        <TextBox x:Name="TextBoxCabinetBound"/>
+        <Label>Телефон</Label>
+        <TextBox x:Name="TextBoxPhone"/>
+        <Button Content="Добавить"
+                Click="ButtonBase_OnClick"/>
+    </StackPanel>
+</Window>

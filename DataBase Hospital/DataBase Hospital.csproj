@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -52,6 +57,94 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddNewAppointment.xaml.cs">
+      <DependentUpon>AddNewAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewCabinet.xaml.cs">
+      <DependentUpon>AddNewCabinet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewDoctor.xaml.cs">
+      <DependentUpon>AddNewDoctor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewPatient.xaml.cs">
+      <DependentUpon>AddNewPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewShedule.xaml.cs">
+      <DependentUpon>AddNewShedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindAppointmentByDiagnosis.xaml.cs">
+      <DependentUpon>FindAppointmentByDiagnosis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindAppointmentByPayment.xaml.cs">
+      <DependentUpon>FindAppointmentByPayment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindDoctorBySecondName.xaml.cs">
+      <DependentUpon>FindDoctorBySecondName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindDoctorByShedule.xaml.cs">
+      <DependentUpon>FindDoctorByShedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindDoctorBySpeciality.xaml.cs">
+      <DependentUpon>FindDoctorBySpeciality.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindPatientByGender.xaml.cs">
+      <DependentUpon>FindPatientByGender.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindPatientBySecondName.xaml.cs">
+      <DependentUpon>FindPatientBySecondName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StaticDataContext.cs" />
+    <Compile Include="TryAgainWindow.xaml.cs">
+      <DependentUpon>TryAgainWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddNewAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewCabinet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewDoctor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewShedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindAppointmentByDiagnosis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindAppointmentByPayment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindDoctorBySecondName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindDoctorByShedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindDoctorBySpeciality.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindPatientByGender.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindPatientBySecondName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -60,12 +153,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="HospitalContext.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TryAgainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -83,6 +186,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -5,8 +5,117 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBase_Hospital"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" 
+        Height="600" 
+        Width="1100"
+        Closing ="MainWindow_OnClosing"
+        ResizeMode="NoResize"
+        >
+    <Window.Resources>
+        <ResourceDictionary Source="Style.xaml"></ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Column="0" 
+                      ShowsPreview="False" 
+                      Width="2"
+                      HorizontalAlignment="Right" 
+                      VerticalAlignment="Stretch"
+                      IsEnabled="False"
+                      Background="Black"
+                      />
+        <StackPanel Grid.Column="0" Orientation="Vertical">
+            <Label>Выберите базу данных для редактирования</Label>
+            <ListBox Name="Menu">
+                <ListBoxItem x:Name="ItemDoctor" 
+                             Content="Врач" 
+                             Selected="ItemDoctor_OnSelected"
+                             />
+                <ListBoxItem x:Name="ItemPatient" 
+                             Content="Пациент" 
+                             Selected="ItemPatient_OnSelected"
+                             />
+                <ListBoxItem x:Name="ItemShedule" 
+                             Content="Графики работы" 
+                             Selected="ItemShedule_OnSelected"
+                             />
+                <ListBoxItem x:Name="ItemCabinet" 
+                             Content="Кабинеты" 
+                             Selected="ItemCabinet_OnSelected"
+                             />
+                <ListBoxItem x:Name="ItemAppointment" 
+                             Content="Приём" 
+                             Selected="ItemAppointment_OnSelected"
+                             />
+            </ListBox>
+            
+            <Label>Выберите тип поиска</Label>
+            <ListBox>
+                <ListBoxItem x:Name="ItemFindDoctorBySecondName"
+                             Content="Поиск врача по фамилии" 
+                             Selected="ItemFindDoctorBySecondName_OnSelected"
+                             />
+                <ListBoxItem x:Name="ItemFindDoctorBySpeciality" 
+                             Content="Поиск врача по специальности" 
+                             Selected="ItemFindDoctorBySpeciality_OnSelected"
+                             />
+                <ListBoxItem x:Name="ItemFindDoctorByShedule" 
+                             Content="Поиск врача по графику" 
+                             Selected="ItemFindDoctorByShedule_OnSelected"
+                             />
+                <ListBoxItem x:Name="ItemFindPatientBySecondName" 
+                             Content="Поиск пациента по фамилии"
+                             Selected="ItemFindPatientBySecondName_OnSelected"
+                             />
+                <ListBoxItem x:Name="ItemFindPatientByGender" 
+                             Content="Поиск пациента по полу" 
+                             Selected="ItemFindPatientByGender_OnSelected"
+                             />
+                <ListBoxItem x:Name="ItemFindAppointmentByPayment"
+                             Content="Поиск приёма по наличию оплаты"
+                             Selected="ItemFindAppointmentByPayment_OnSelected"
+                             />
+                <ListBoxItem x:Name="ItemFinAppointmentByDiagnosis"
+                             Content="Поиск приёма по диагнозу"
+                             Selected="ItemFinAppointmentByDiagnosis_OnSelected"
+                             />
+            </ListBox>
+        </StackPanel>
+        <Grid Grid.Column ="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <DataGrid x:Name="MainGrid" 
+                      Grid.Row="0" 
+                      Margin="10" 
+                      VerticalAlignment="Stretch" 
+                      HorizontalAlignment="Stretch"
+                      CanUserAddRows="False"
+                      AutoGeneratingColumn="MainGrid_OnAutoGeneratingColumn"
+                      RowHeight="30"
+                      />
+                      
+            <StackPanel Grid.Row="1"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal"
+                        >
+                <Button x:Name="BtnAddNewData"                        
+                        Content="Добавить даннные"
+                        IsEnabled="False" 
+                        Click="BtnAddNewData_OnClick"
+                        />
+
+                <Button x:Name="BtnUpdateDb" 
+                        Content="Обновить и сохранить изменения" 
+                        IsEnabled="False"
+                        Click="BtnUpdateDb_OnClick"
+                        />
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
